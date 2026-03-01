@@ -3,8 +3,8 @@ import numpy as np
 import random 
 
 
-offset_x, offset_y = 0, 0
-change_x, change_y = 5, 5
+offset = 0
+change = 5
 
 cap = cv2.VideoCapture(0)
 
@@ -27,15 +27,13 @@ while True:
     
     jitter = cv2.warpAffine(copy, matrix1, (w, h))
 
-    if not (0 <= offset_x <= 100) or not (0 <= offset_y <= 100):
-        change_x *= -1 
-        change_y *= -1 
+    if not (0 <= offset <= 100) or not (0 <= offset <= 100):
+        change *= -1 
 
-    offset_x += change_x
-    offset_y += change_y 
-
-    matrix2 = np.float32([[1, 0, offset_x],
-                         [0, 1, offset_y]])
+    offset += change
+    
+    matrix2 = np.float32([[1, 0, offset],
+                         [0, 1, offset]])
     
     bounce = cv2.warpAffine(copy2, matrix2, (w, h))
     
