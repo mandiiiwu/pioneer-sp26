@@ -1,7 +1,7 @@
 import os
 import cv2
 
-img = cv2.imread(f'{os.getcwd()}/session1/SampleImages/snow.jpg')
+img = cv2.imread(f'/SampleImages/snow.jpg')
 # cv2.imshow('image', img)
 # cv2.waitKey() 
 

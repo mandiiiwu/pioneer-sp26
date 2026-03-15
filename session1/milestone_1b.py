@@ -2,7 +2,7 @@ import os
 import cv2
 
 current = os.getcwd() + '/session1/'
-img_names = os.listdir(current + '/SampleImages')
+img_names = os.listdir('/SampleImages')
 
 for name in img_names:
     if (name.endswith('.jpg')):
