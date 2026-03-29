@@ -26,5 +26,25 @@ cv2.imshow('canny edge', canny)
 
 cv2.waitKey(-1)
 
+# hsv thresh turned out a lot cleaner so lets use that
+
+contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+final = img.copy() 
+
+if len(contours) > 0:
+    ball = max(contours, key=cv2.contourArea)
+    cv2.drawContours(final, [ball], -1, (0, 255, 0), 2)
+
+    x, y, w, h = cv2.boundingRect(ball)
+    cv2.rectangle(final, (x, y), (x+w, y+h), (0, 0, 255), 2)
+
+    (cx, cy), r = cv2.minEnclosingCircle(ball)
+    cv2.circle(final, (int(cx), int(cy)), int(r), (255, 0, 0), 2)
+
+    print(f'largest contour area: {cv2.contourArea(ball)}')
+    cv2.imshow('final', final)
+
+    cv2.waitKey(-1)
+
 cv2.destroyAllWindows()
 
