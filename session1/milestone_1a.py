@@ -1,7 +1,7 @@
 import os
 import cv2
 
-current = os.getcwd() + '/session1/'
+current = os.getcwd()
 
 img_names = [
     'chicago.jpg',
@@ -11,7 +11,7 @@ img_names = [
 ]
 
 for name in img_names:
-    img = cv2.imread(f'/SampleImages/{name}')
+    img = cv2.imread(f'{current}/SampleImages/{name}')
     cv2.imshow(f'image', img)
     cv2.waitKey(0)
 

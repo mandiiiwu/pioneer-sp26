@@ -1,8 +1,8 @@
 import os
 import cv2
 
-img1 = cv2.imread(f'/SampleImages/daylilies.jpg')
-img2 = cv2.imread(f'/SampleImages/astilbe.jpg')
+img1 = cv2.imread(f'{os.getcwd()}/SampleImages/daylilies.jpg')
+img2 = cv2.imread(f'{os.getcwd()}/SampleImages/astilbe.jpg')
 
 # .shape -> h, w, c 
 print(img1.shape) # (480, 640, 3)

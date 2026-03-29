@@ -27,7 +27,7 @@ while True:
     
     jitter = cv2.warpAffine(copy, matrix1, (w, h))
 
-    if not (0 <= offset <= 100) or not (0 <= offset <= 100):
+    if not (0 <= offset <= 100):
         change *= -1 
 
     offset += change

@@ -18,6 +18,6 @@ while True:
         char = chr(char)
         if char == 'q': break 
         # extension 2
-        if char == ' ': cv2.imwrite(f'/session1/screenshot.jpg', mirrored)
+        if char == ' ': cv2.imwrite(f'{os.getcwd()}/screenshot.jpg', mirrored)
 
 cap.release()

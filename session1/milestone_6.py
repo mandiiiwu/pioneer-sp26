@@ -11,7 +11,7 @@ while True:
 
     h, w, _ = frame.shape 
 
-    matrix = cv2.getRotationMatrix2D((h//2, w//2), angle, 1)
+    matrix = cv2.getRotationMatrix2D((w//2, h//2), angle, 1)
     rot = cv2.warpAffine(frame, matrix, (w, h))
 
     cv2.imshow('rotated', rot)
