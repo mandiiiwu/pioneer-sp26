@@ -84,9 +84,9 @@ if frame is not None:
         if showBackProj:
             vis[:] = prob[..., np.newaxis]
         try:
-            cv2.ellipse(vis, track_box, (0, 0, 255), 2)
+            cv2.ellipse(vis, box, (0, 0, 255), 2)
         except:
-            print("Track box:", track_box)
+            print("box:", box)
 
         cv2.imshow('camshift', vis)
 

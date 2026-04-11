@@ -14,7 +14,6 @@ cv2.imshow('image', img) # ball appears to be bright blue
 
 # original mask produced bad results
 # lots of manual tweaking later, i found that these values were ideal 
-# bit of black corner (bottom left) still persists though 
 lower = np.array([100, 100, 20])
 upper = np.array([130, 255, 255])
 

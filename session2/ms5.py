@@ -11,6 +11,8 @@ while True:
     diff = cv2.absdiff(prev, curr)
     cv2.imshow('motion', diff)
 
+    prev = curr 
+
     cv2.waitKey(1)
 
 cv2.destroyAllWindows() 
