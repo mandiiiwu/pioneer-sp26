@@ -39,7 +39,7 @@ print('result: ', result)
 print('neighbors: ', neighbors)
 print('distances: ', dist)
 
-matches = result.flatten() == y_test.flatten() 
+matches = result.flatten() == y_test.flatten() # had to modify 
 correct = np.count_nonzero(matches)
 acc = correct * 100.0 / result.size 
 print('accuracy: ', acc)
